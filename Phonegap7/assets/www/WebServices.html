@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Minimal AppLaud App</title>
+
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery.mobile-1.1.0.js"></script>
+     <script type="text/javascript" charset="utf-8" src="jquery.mobile/json2.js"></script>
+    <script type="text/javascript" src="jquery.mobile/xui-2.3.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+	  <script type="text/javascript" charset="utf-8">
+      
+        var onDeviceReady = function() {
+            document.getElementById("devready").innerHTML = "OnDeviceReady fired.";
+        };
+
+        function init() {
+            document.addEventListener("deviceready", onDeviceReady, true);
+        }   
+</script>  
+
+  </head>
+  <body onload="init();" id="stage" class="theme">
+    <script type="text/javascript" charset="utf-8">
+        
+        function callWebService() {
+              var name= document.getElementById("name").value;
+                  $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                data: name,
+                contentType: "application/json; charset=utf-8",
+                url: "http://10.0.2.2:12521/Service1.svc/SearchName",
+                error: function (xhr, textStatus, errorThrown) {
+                    
+                },
+                success: function (data, textStatus, xhr) {
+                    
+                    var response = data;
+                    var txt = document.getElementById("resultshow");
+                 
+                    txt.innerHTML ="result is: " + response;
+         
+                }
+            });
+        } //end of method
+
+     
+    </script>
+ <div  >
+          <input class="divvalue" type="text" id="name" />
+         </div>
+ <div id ="resultshow" style="color:blue;"></div>
+    <div id ="percentageshow" style="color:blue;"></div>
+    <button type="button" onclick="callWebService()" id="calc">Show Result</button>
+  </body>
+</html>

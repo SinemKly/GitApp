@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+  <meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Archivo+Narrow:400,700" rel="stylesheet" type="text/css">
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+
+  <style>
+
+  </style>
+  </head>
+  <body>
+  
+    <div id="logo" class="container">
+	<h1><a href="#">Doubtless</a></h1>
+</div>
+<div id="menu-wrapper">
+	<div id="menu" class="container">
+		<ul>
+			<li class="current_page_item"><a href="#">Homepage</a></li>
+			<li><a href="Services.html">Services</a></li>			
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">Photos</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Links</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</div>
+</div>
+  <audio id="audio_with_controls" controls autobuffer>
+      <source src="http://playground.html5rocks.com/samples/html5_misc/rushus-modal_blues.mp3" type="audio/mpeg" />
+      <source src="http://playground.html5rocks.com/samples/html5_misc/rushus-modal_blues.ogg" type="audio/ogg" />
+        Audio tag not supported
+    </audio>
+    <!-- some actions from Javascript -->
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="duration">Show duration</button>
+    <div id="duration-log"></div>
+    <script>
+      var song = document.getElementById('audio_with_controls');
+      document.getElementById('play').addEventListener('click', function() { song.play(); }, false);
+      document.getElementById('pause').addEventListener('click', function() { song.pause(); }, false);
+      document.getElementById('duration').addEventListener('click', function() { document.querySelector('#duration-log').textContent = song.duration; }, false);
+    </script>
+     <a rel='Maps' href="Maps.html">Maps</a>
+     <a rel='FormFields' href="FormFields.html">FormFields</a>
+     <a rel='WebServices' href="WebServices.html">WebServices</a>
+</div>
+<div id="footer" class="container">
+	<p>Copyright (c) 2013 Deu Ceng </p>
+</div>
+  </body>
+</html>​
