@@ -1,6 +1,6 @@
 
 public class Car {
-
+        private String git;
 	private String name;
 	private int point;
 	private int capacity;
